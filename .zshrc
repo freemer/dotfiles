@@ -110,13 +110,27 @@ alias crdemi='cordova emulate ios'
 alias adbdev='adb devices'
 alias findserv='f() { lsof -wni tcp:$1 };f'
 alias rg='rubocop-git'
+alias gundoc='git reset HEAD~'
+
+#ssh
+alias ssh-api="ssh -i ~/.ssh/will-ws.pem ec2-user@ec2-35-182-167-161.ca-central-1.compute.amazonaws.com"
+alias ssh-api-staging="ssh -i ~/.ssh/will-ws.pem ec2-user@ec2-52-60-182-41.ca-central-1.compute.amazonaws.com"
+alias ssh-app-staging="ssh -i ~/.ssh/will-ws.pem ec2-user@ec2-35-182-121-159.ca-central-1.compute.amazonaws.com"
+alias ssh-spindle="ssh -i ~/.ssh/will-ws.pem ec2-user@ec2-35-183-23-110.ca-central-1.compute.amazonaws.com"
+alias ssh-spindle-staging="ssh -i ~/.ssh/will-ws.pem ec2-user@ec2-35-183-72-44.ca-central-1.compute.amazonaws.com"
+alias ssh-api-db="ssh -i ~/.ssh/will-ws.pem ec2-user@ec2-35-182-161-63.ca-central-1.compute.amazonaws.com"
 
 function color {
     case $1 in
     green)
-    echo -e "\033]6;1;bg;red;brightness;50\a"
-    echo -e "\033]6;1;bg;green;brightness;205\a"
-    echo -e "\033]6;1;bg;blue;brightness;50\a"
+    echo -e "\033]6;1;bg;red;brightness;0\a"
+    echo -e "\033]6;1;bg;green;brightness;128\a"
+    echo -e "\033]6;1;bg;blue;brightness;0\a"
+    ;;
+    fart)
+    echo -e "\033]6;1;bg;red;brightness;144\a"
+    echo -e "\033]6;1;bg;green;brightness;238\a"
+    echo -e "\033]6;1;bg;blue;brightness;144\a"
     ;;
     red)
     echo -e "\033]6;1;bg;red;brightness;255\a"
