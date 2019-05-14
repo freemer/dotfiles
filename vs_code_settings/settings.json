@@ -4,6 +4,7 @@
   "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
   "editor.lineNumbers": "relative",
+  "editor.minimap.enabled": false,
   "editor.multiCursorModifier": "ctrlCmd",
   "editor.scrollBeyondLastLine": false,
   "editor.snippetSuggestions": "top",
