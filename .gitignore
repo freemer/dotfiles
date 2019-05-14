@@ -2,6 +2,9 @@
 
 !.gitignore
 !.zshrc
+!./.vim/*
 !Package Control.sublime-settings
 !Preferences.sublime-settings
 !Shortcuts.json
+!/vs_code_settings/
+!/vs_code_settings/*

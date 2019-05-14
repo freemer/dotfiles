@@ -1,0 +1,16 @@
+{
+  "editor.fontFamily": "Hack",
+  "editor.fontSize": 12,
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.lineNumbers": "relative",
+  "editor.multiCursorModifier": "ctrlCmd",
+  "editor.scrollBeyondLastLine": false,
+  "editor.snippetSuggestions": "top",
+  "editor.tabSize": 2,
+  "files.insertFinalNewline": true,
+  "search.location": "panel",
+  "window.zoomLevel": 0,
+  "workbench.activityBar.visible": false,
+  "workbench.colorTheme": "Monokai"
+}

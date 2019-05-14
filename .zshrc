@@ -1,5 +1,7 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
+# export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
+PATH=/Library/PostgreSQL/10/bin/:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/jasonfreeman/.oh-my-zsh
@@ -85,11 +87,14 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
+# export PATH="$PATH:$HOME/.rvm/bin"
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# source $HOME/.rvm/scripts/rvm
+
+# export NVM_DIR="$HOME/.nvm"
+# . "/usr/local/opt/nvm/nvm.sh"
+
+eval "$(scmpuff init -s)"
 
 alias pg-start="launchctl load ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist"
 alias pg-stop="launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist"
@@ -111,6 +116,7 @@ alias adbdev='adb devices'
 alias findserv='f() { lsof -wni tcp:$1 };f'
 alias rg='rubocop-git'
 alias gundoc='git reset HEAD~'
+alias ngrok='~/ngrok'
 
 #ssh
 alias ssh-api="ssh -i ~/.ssh/will-ws.pem ec2-user@ec2-35-182-167-161.ca-central-1.compute.amazonaws.com"
@@ -119,6 +125,10 @@ alias ssh-app-staging="ssh -i ~/.ssh/will-ws.pem ec2-user@ec2-35-182-121-159.ca-
 alias ssh-spindle="ssh -i ~/.ssh/will-ws.pem ec2-user@ec2-35-183-23-110.ca-central-1.compute.amazonaws.com"
 alias ssh-spindle-staging="ssh -i ~/.ssh/will-ws.pem ec2-user@ec2-35-183-72-44.ca-central-1.compute.amazonaws.com"
 alias ssh-api-db="ssh -i ~/.ssh/will-ws.pem ec2-user@ec2-35-182-161-63.ca-central-1.compute.amazonaws.com"
+
+alias gbcleanup="git branch --merged | egrep -v '(^\*|master|dev)' | xargs git branch -d && git remote prune origin"
+alias ghreset="git reset --hard origin/$(current_branch)"
+alias branch="echo $(current_branch)"
 
 function color {
     case $1 in
@@ -149,3 +159,9 @@ function color {
     ;;
     esac
  }
+
+. $HOME/.asdf/completions/asdf.bash
+
+. $HOME/.asdf/asdf.sh
+
+eval "$(direnv hook zsh)"
