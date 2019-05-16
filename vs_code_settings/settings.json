@@ -11,9 +11,11 @@
   "editor.snippetSuggestions": "top",
   "editor.tabSize": 2,
   "files.insertFinalNewline": true,
+  "javascript.validate.enable": false,
   "search.location": "panel",
   "window.zoomLevel": 0,
   "workbench.activityBar.visible": false,
   "workbench.colorTheme": "Monokai",
-  "workbench.editor.enablePreview": false
+  "workbench.editor.enablePreview": false,
+  "terminal.integrated.rendererType": "dom"
 }

@@ -115,8 +115,9 @@ alias crdemi='cordova emulate ios'
 alias adbdev='adb devices'
 alias findserv='f() { lsof -wni tcp:$1 };f'
 alias rg='rubocop-git'
-alias gundoc='git reset HEAD~'
+alias heroky='heroku'
 alias ngrok='~/ngrok'
+alias gundoc='git reset HEAD~'
 
 #ssh
 alias ssh-api="ssh -i ~/.ssh/will-ws.pem ec2-user@ec2-35-182-167-161.ca-central-1.compute.amazonaws.com"
@@ -129,6 +130,7 @@ alias ssh-api-db="ssh -i ~/.ssh/will-ws.pem ec2-user@ec2-35-182-161-63.ca-centra
 alias gbcleanup="git branch --merged | egrep -v '(^\*|master|dev)' | xargs git branch -d && git remote prune origin"
 alias ghreset="git reset --hard origin/$(current_branch)"
 alias branch="echo $(current_branch)"
+alias gdh="gd HEAD~1"
 
 function color {
     case $1 in
