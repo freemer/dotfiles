@@ -5,6 +5,7 @@ PATH=/Library/PostgreSQL/10/bin/:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/jasonfreeman/.oh-my-zsh
+export ERL_AFLAGS="-kernel shell_history enabled"
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -118,6 +119,7 @@ alias rg='rubocop-git'
 alias heroky='heroku'
 alias ngrok='~/ngrok'
 alias gundoc='git reset HEAD~'
+alias gbcopy='git branch | grep '^\*' | cut -d' ' -f2 | pbcopy'
 
 #ssh
 alias ssh-api="ssh -i ~/.ssh/will-ws.pem ec2-user@ec2-35-182-167-161.ca-central-1.compute.amazonaws.com"
