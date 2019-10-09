@@ -6,7 +6,10 @@
   "editor.lineNumbers": "relative",
   "editor.minimap.enabled": false,
   "editor.multiCursorModifier": "ctrlCmd",
-  "editor.rulers": [80, 98],
+  "editor.rulers": [
+    80,
+    98
+  ],
   "editor.scrollBeyondLastLine": false,
   "editor.snippetSuggestions": "top",
   "editor.tabSize": 2,
@@ -83,5 +86,8 @@
   "[elixir]": {
     "editor.defaultFormatter": "JakeBecker.elixir-ls"
   },
-  "terminal.integrated.shell.osx": "/bin/zsh"
+  "terminal.integrated.shell.osx": "/bin/zsh",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
