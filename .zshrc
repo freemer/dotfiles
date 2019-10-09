@@ -1,7 +1,6 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-# export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
-PATH=/Library/PostgreSQL/10/bin/:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$PATH
+
 
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/jasonfreeman/.oh-my-zsh
@@ -117,7 +116,6 @@ alias adbdev='adb devices'
 alias findserv='f() { lsof -wni tcp:$1 };f'
 alias rg='rubocop-git'
 alias heroky='heroku'
-alias ngrok='~/ngrok'
 alias gundoc='git reset HEAD~'
 alias gbcopy='git branch | grep '^\*' | cut -d' ' -f2 | pbcopy'
 
@@ -133,6 +131,8 @@ alias gbcleanup="git branch --merged | egrep -v '(^\*|master|dev)' | xargs git b
 alias ghreset="git reset --hard origin/$(current_branch)"
 alias branch="echo $(current_branch)"
 alias gdh="gd HEAD~1"
+alias gfco='f() { git fetch origin $1 && git checkout &1 };f'
+alias dc="docker-compose"
 
 function color {
     case $1 in
