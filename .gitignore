@@ -8,3 +8,5 @@
 !Shortcuts.json
 !/.vs_code_settings/
 !/.vs_code_settings/*
+!/.iterm2settings/
+!/.iterm2settings/*
