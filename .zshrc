@@ -1,3 +1,4 @@
+ZSH_DISABLE_COMPFIX=true
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -169,3 +170,7 @@ function color {
 . $HOME/.asdf/asdf.sh
 
 eval "$(direnv hook zsh)"
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+[ -f "/Users/jasonfreeman/.shopify-app-cli/shopify.sh" ] && source "/Users/jasonfreeman/.shopify-app-cli/shopify.sh"
