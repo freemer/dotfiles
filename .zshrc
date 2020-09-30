@@ -1,6 +1,6 @@
 ZSH_DISABLE_COMPFIX=true
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:/usr/bin:/usr/local/opt/ruby/bin:$PATH
 
 
 # Path to your oh-my-zsh installation.
@@ -119,6 +119,7 @@ alias rg='rubocop-git'
 alias heroky='heroku'
 alias gundoc='git reset HEAD~'
 alias gbcopy='git branch | grep '^\*' | cut -d' ' -f2 | pbcopy'
+alias ys='yarn serve'
 
 #ssh
 alias ssh-api="ssh -i ~/.ssh/will-ws.pem ec2-user@ec2-35-182-167-161.ca-central-1.compute.amazonaws.com"
@@ -172,5 +173,4 @@ function color {
 eval "$(direnv hook zsh)"
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-
-[ -f "/Users/jasonfreeman/.shopify-app-cli/shopify.sh" ] && source "/Users/jasonfreeman/.shopify-app-cli/shopify.sh"
+export PATH="/usr/local/opt/php@7.2/bin:$PATH"
