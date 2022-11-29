@@ -1,6 +1,7 @@
 ZSH_DISABLE_COMPFIX=true
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 
 
 # Path to your oh-my-zsh installation.
@@ -118,22 +119,21 @@ alias findserv='f() { lsof -wni tcp:$1 };f'
 alias rg='rubocop-git'
 alias heroky='heroku'
 alias gundoc='git reset HEAD~'
-alias gbcopy='git branch | grep '^\*' | cut -d' ' -f2 | pbcopy'
-
-#ssh
-alias ssh-api="ssh -i ~/.ssh/will-ws.pem ec2-user@ec2-35-182-167-161.ca-central-1.compute.amazonaws.com"
-alias ssh-api-staging="ssh -i ~/.ssh/will-ws.pem ec2-user@ec2-52-60-182-41.ca-central-1.compute.amazonaws.com"
-alias ssh-app-staging="ssh -i ~/.ssh/will-ws.pem ec2-user@ec2-35-182-121-159.ca-central-1.compute.amazonaws.com"
-alias ssh-spindle="ssh -i ~/.ssh/will-ws.pem ec2-user@ec2-35-183-23-110.ca-central-1.compute.amazonaws.com"
-alias ssh-spindle-staging="ssh -i ~/.ssh/will-ws.pem ec2-user@ec2-35-183-72-44.ca-central-1.compute.amazonaws.com"
-alias ssh-api-db="ssh -i ~/.ssh/will-ws.pem ec2-user@ec2-35-182-161-63.ca-central-1.compute.amazonaws.com"
-
-alias gbcleanup="git branch --merged | egrep -v '(^\*|master|dev)' | xargs git branch -d && git remote prune origin"
+alias gcfix='f() { git commit --fixup=$1 && git rebase -i --autosquash $1~1 };f'
+alias gbcleanup="git branch --merged | egrep -v '(^\*|main)' | xargs git branch -d && git remote prune origin"
 alias ghreset="git reset --hard origin/$(current_branch)"
 alias branch="echo $(current_branch)"
 alias gdh="gd HEAD~1"
-alias gfco='f() { git fetch origin $1 && git checkout &1 };f'
+alias gfco='f() { gfo $1 && gco $1 };f'
 alias dc="docker-compose"
+alias ys="yarn serve"
+alias gbcopy="git branch | grep '^\*' | cut -d' ' -f2 | pbcopy"
+alias gpom='git pull --rebase origin main'
+alias grm='f() { ga $1 && git rm -f $1 };f'
+alias usodb="~/work/elixir-uso && dc exec db psql -U postgres -d uso_dev && -"
+alias whodb="~/work/elixir-wholesale && dc exec db psql -U postgres -d who_dev && -"
+alias pissh="ssh -i ~/.ssh/pi/id_rsa pi@192.168.0.108"
+alias ixp="iex -S mix phx.server"
 
 function color {
     case $1 in
@@ -171,6 +171,9 @@ function color {
 
 eval "$(direnv hook zsh)"
 
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+
 
 [ -f "/Users/jasonfreeman/.shopify-app-cli/shopify.sh" ] && source "/Users/jasonfreeman/.shopify-app-cli/shopify.sh"
+# export PATH=/usr/local/php5/bin:$PATH 
