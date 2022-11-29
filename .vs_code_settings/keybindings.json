@@ -128,7 +128,7 @@
   },
   {
     "key": "ctrl+shift+down",
-    "command": "workbench.action.terminal.resizePaneDown",
+    "command": "workbench.action.terminal.resizePaneDown"
   },
   {
     "key": "ctrl+shift+left",
@@ -142,11 +142,11 @@
   },
   {
     "key": "ctrl+shift+up",
-    "command": "workbench.action.terminal.resizePaneUp",
+    "command": "workbench.action.terminal.resizePaneUp"
   },
   {
     "key": "ctrl+shift+d",
-    "command": "workbench.action.search.toggleQueryDetails",
+    "command": "workbench.action.search.toggleQueryDetails"
   },
   {
     "key": "ctrl+shift+c",
@@ -156,5 +156,20 @@
     "key": "ctrl+shift+c",
     "command": "toggleFindCaseSensitive",
     "when": "editorFocus"
+  },
+  {
+    "key": "cmd+g cmd+t",
+    "command": "editor.action.revealDefinition",
+    "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
+  },
+  {
+    "key": "f12",
+    "command": "-editor.action.revealDefinition",
+    "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
+  },
+  {
+    "key": "cmd+k cmd+c",
+    "command": "workbench.files.action.collapseExplorerFolders",
+    "when": "filesExplorerFocus"
   }
 ]
